@@ -1,0 +1,268 @@
+  [1m[35m (194.0ms)[0m  [1m[35mCREATE DATABASE "score_card_development" ENCODING = 'unicode'[0m
+  [1m[35m (113.2ms)[0m  [1m[35mCREATE DATABASE "score_card_test" ENCODING = 'unicode'[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20230607211254)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "score_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64cf86b5b7"
+FOREIGN KEY ("score_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20230607211254)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "scores_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e0085bc7b6"
+FOREIGN KEY ("scores_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20230607211254)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "score_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64cf86b5b7"
+FOREIGN KEY ("score_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20230607211254)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "scores_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e0085bc7b6"
+FOREIGN KEY ("scores_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScores (20230607213209)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "scores" ("id" bigserial primary key, "score" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607213209"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTees (20230607214729)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "tees" ("id" bigserial primary key, "color" character varying, "score_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_47041d7235"
+FOREIGN KEY ("score_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_tees_on_score_id" ON "tees" ("score_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607214729"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHoles (20230607214758)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "holes" ("id" bigserial primary key, "number" integer, "distance" integer, "score_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_cf9146599b"
+FOREIGN KEY ("score_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_holes_on_score_id" ON "holes" ("score_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607214758"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCourses (20230607214840)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "name" character varying, "holes" integer, "score_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0ca5f04bba"
+FOREIGN KEY ("score_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_courses_on_score_id" ON "courses" ("score_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607214840"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlayers (20230607214905)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "score_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64cf86b5b7"
+FOREIGN KEY ("score_id")
+  REFERENCES "scores" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_players_on_score_id" ON "players" ("score_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607214905"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-07 21:51:10.469094"], ["updated_at", "2023-06-07 21:51:10.469094"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20230607214905)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mDROP TABLE "players"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230607214905"]]
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCourses (20230607214840)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "courses"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230607214840"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHoles (20230607214758)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "holes"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230607214758"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTees (20230607214729)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "tees"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230607214729"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScores (20230607213209)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "scores"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230607213209"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20230607215803)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607215803"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCourses (20230607215814)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "name" character varying, "holes" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607215814"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHoles (20230607215828)
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "holes" ("id" bigserial primary key, "number" integer, "distance" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607215828"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTees (20230607215909)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "tees" ("id" bigserial primary key, "color" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607215909"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScores (20230607220025)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "scores" ("id" bigserial primary key, "score" integer, "player_id" bigint NOT NULL, "hole_id" bigint NOT NULL, "course_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_5b96c0d2c2"
+FOREIGN KEY ("player_id")
+  REFERENCES "players" ("id")
+, CONSTRAINT "fk_rails_44c180293a"
+FOREIGN KEY ("hole_id")
+  REFERENCES "holes" ("id")
+, CONSTRAINT "fk_rails_9ee320bc9d"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_scores_on_player_id" ON "scores" ("player_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_scores_on_hole_id" ON "scores" ("hole_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_scores_on_course_id" ON "scores" ("course_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607220025"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMultipleDistanceToHole (20230607222656)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "holes" ADD "distance_blue" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "holes" ADD "distance_white" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230607222656"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4193982448553133810)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.4ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lauren Grassello"], ["created_at", "2023-06-07 22:35:21.857170"], ["updated_at", "2023-06-07 22:35:21.857170"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Andrew Zehnder"], ["created_at", "2023-06-07 22:35:21.861464"], ["updated_at", "2023-06-07 22:35:21.861464"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bryan Fecht"], ["created_at", "2023-06-07 22:35:21.863606"], ["updated_at", "2023-06-07 22:35:21.863606"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dzenisa Burnic"], ["created_at", "2023-06-07 22:35:21.865593"], ["updated_at", "2023-06-07 22:35:21.865593"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("name", "holes", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boulder City Golf Course"], ["holes", 18], ["created_at", "2023-06-07 22:35:21.874678"], ["updated_at", "2023-06-07 22:35:21.874678"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("name", "holes", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Eagle Hills Golf Course"], ["holes", 18], ["created_at", "2023-06-07 22:35:21.877174"], ["updated_at", "2023-06-07 22:35:21.877174"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (1.1ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 1], ["distance", 494], ["created_at", "2023-06-07 22:35:21.888679"], ["updated_at", "2023-06-07 22:35:21.888679"], ["distance_blue", 238], ["distance_white", 301]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 2], ["distance", 307], ["created_at", "2023-06-07 22:35:21.891490"], ["updated_at", "2023-06-07 22:35:21.891490"], ["distance_blue", 213], ["distance_white", 572]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 3], ["distance", 124], ["created_at", "2023-06-07 22:35:21.893225"], ["updated_at", "2023-06-07 22:35:21.893225"], ["distance_blue", 435], ["distance_white", 124]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 4], ["distance", 315], ["created_at", "2023-06-07 22:35:21.895221"], ["updated_at", "2023-06-07 22:35:21.895221"], ["distance_blue", 555], ["distance_white", 357]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 5], ["distance", 220], ["created_at", "2023-06-07 22:35:21.897060"], ["updated_at", "2023-06-07 22:35:21.897060"], ["distance_blue", 234], ["distance_white", 532]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.3ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 6], ["distance", 557], ["created_at", "2023-06-07 22:35:21.898821"], ["updated_at", "2023-06-07 22:35:21.898821"], ["distance_blue", 231], ["distance_white", 643]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.6ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 7], ["distance", 176], ["created_at", "2023-06-07 22:35:21.900642"], ["updated_at", "2023-06-07 22:35:21.900642"], ["distance_blue", 546], ["distance_white", 521]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 8], ["distance", 401], ["created_at", "2023-06-07 22:35:21.902890"], ["updated_at", "2023-06-07 22:35:21.902890"], ["distance_blue", 631], ["distance_white", 532]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 9], ["distance", 234], ["created_at", "2023-06-07 22:35:21.904768"], ["updated_at", "2023-06-07 22:35:21.904768"], ["distance_blue", 914], ["distance_white", 858]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 10], ["distance", 24], ["created_at", "2023-06-07 22:35:21.906864"], ["updated_at", "2023-06-07 22:35:21.906864"], ["distance_blue", 245], ["distance_white", 231]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.3ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 11], ["distance", 394], ["created_at", "2023-06-07 22:35:21.908636"], ["updated_at", "2023-06-07 22:35:21.908636"], ["distance_blue", 748], ["distance_white", 385]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 12], ["distance", 376], ["created_at", "2023-06-07 22:35:21.910485"], ["updated_at", "2023-06-07 22:35:21.910485"], ["distance_blue", 558], ["distance_white", 312]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.2ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 13], ["distance", 423], ["created_at", "2023-06-07 22:35:21.912204"], ["updated_at", "2023-06-07 22:35:21.912204"], ["distance_blue", 221], ["distance_white", 357]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (1.9ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 14], ["distance", 462], ["created_at", "2023-06-07 22:35:21.913896"], ["updated_at", "2023-06-07 22:35:21.913896"], ["distance_blue", 345], ["distance_white", 221]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.1ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 15], ["distance", 394], ["created_at", "2023-06-07 22:35:21.917726"], ["updated_at", "2023-06-07 22:35:21.917726"], ["distance_blue", 268], ["distance_white", 511]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.1ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 16], ["distance", 614], ["created_at", "2023-06-07 22:35:21.919598"], ["updated_at", "2023-06-07 22:35:21.919598"], ["distance_blue", 338], ["distance_white", 391]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.1ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 17], ["distance", 488], ["created_at", "2023-06-07 22:35:21.921296"], ["updated_at", "2023-06-07 22:35:21.921296"], ["distance_blue", 128], ["distance_white", 355]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Create (0.1ms)[0m  [1m[32mINSERT INTO "holes" ("number", "distance", "created_at", "updated_at", "distance_blue", "distance_white") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["number", 18], ["distance", 214], ["created_at", "2023-06-07 22:35:21.923096"], ["updated_at", "2023-06-07 22:35:21.923096"], ["distance_blue", 178], ["distance_white", 421]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mScore Create (4.1ms)[0m  [1m[32mINSERT INTO "scores" ("score", "player_id", "hole_id", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 12], ["player_id", 1], ["hole_id", 1], ["course_id", 1], ["created_at", "2023-06-07 22:35:21.941233"], ["updated_at", "2023-06-07 22:35:21.941233"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mScore Create (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("score", "player_id", "hole_id", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 12], ["player_id", 2], ["hole_id", 1], ["course_id", 1], ["created_at", "2023-06-07 22:35:21.947338"], ["updated_at", "2023-06-07 22:35:21.947338"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mScore Create (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("score", "player_id", "hole_id", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 12], ["player_id", 3], ["hole_id", 1], ["course_id", 1], ["created_at", "2023-06-07 22:35:21.949664"], ["updated_at", "2023-06-07 22:35:21.949664"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mScore Create (0.2ms)[0m  [1m[32mINSERT INTO "scores" ("score", "player_id", "hole_id", "course_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 12], ["player_id", 4], ["hole_id", 1], ["course_id", 1], ["created_at", "2023-06-07 22:35:21.951502"], ["updated_at", "2023-06-07 22:35:21.951502"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY "players"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mScore Pluck (0.9ms)[0m  [1m[34mSELECT "scores"."id" FROM "scores" WHERE "scores"."course_id" = $1[0m  [["course_id", 1]]
+  [1m[36mScore Load (0.5ms)[0m  [1m[34mSELECT "scores".* FROM "scores" ORDER BY "scores"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
